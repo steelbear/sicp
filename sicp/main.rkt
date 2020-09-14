@@ -16,6 +16,12 @@
     [(_ id expr) #'(begin
                      (provide id)
                      (define id expr))]))
+                     
+(define+provide *op-table* (make-hash))
+(define+provide (put op type proc)
+  (hash-set! *op-table* (list op type) proc))
+(define+provide (get op type)
+  (hash-ref *op-table* (list op type) '()))
 
 (provide true)
 (provide false)

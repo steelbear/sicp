@@ -1,2 +1,2 @@
 #lang s-exp syntax/module-reader
-#:language 'sicp-steelbear
+#:language 'sicp
